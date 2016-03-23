@@ -12,7 +12,7 @@ import java.io.IOException;
  * Created by Rewati Raman(rewati.raman@gmail.com).
  */
 public class test {
-    public static void main(String[] arg) throws IOException {
+    public  void test() throws IOException {
 
         final GpioController gpio = GpioFactory.getInstance();
 
