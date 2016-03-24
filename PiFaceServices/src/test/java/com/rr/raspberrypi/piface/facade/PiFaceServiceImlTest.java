@@ -51,7 +51,7 @@ public class PiFaceServiceImlTest {
 
     @Test
     public void LEDoff() throws Exception {
-
+        pi.LEDoff(3);
     }
 
     @Test
