@@ -23,7 +23,7 @@ import org.junit.Test;
  */
 public class PiFaceExample {
 
-    static int cylonSpeed = 100;
+    static int cylonSpeed = 10000;
 
     @Test
     public  void test() throws InterruptedException, IOException {
@@ -35,17 +35,7 @@ public class PiFaceExample {
         // run continuously until user aborts with CTRL-C
         while(true) {
 
-            // step up the ladder
-            for(int index = PiFaceLed.LED3.getIndex(); index <= PiFaceLed.LED7.getIndex(); index++) {
-                piface.getLed(index).pulse(cylonSpeed);
-                Thread.sleep(cylonSpeed);
-            }
-
-            // step down the ladder
-            for(int index = PiFaceLed.LED7.getIndex(); index >= PiFaceLed.LED3.getIndex(); index--) {
-                piface.getLed(index).pulse(cylonSpeed);
-                Thread.sleep(cylonSpeed);
-            }
+            piface.getLed(7).toggle();
         }
 
         // stop all GPIO activity/threads by shutting down the GPIO controller
