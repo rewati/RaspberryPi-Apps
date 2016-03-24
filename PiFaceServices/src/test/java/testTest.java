@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
  */
 public class testTest {
 
-    @Test
+//    @Test
     public void test1() throws Exception {
         test t1 = new test();
         t1.test();
