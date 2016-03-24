@@ -26,17 +26,36 @@ import static org.junit.Assert.*;
 /**
  * Created by Rewati Raman(rewati.raman@gmail.com).
  */
-public class LightEffectImlTest {
+public class PiFaceServiceImlTest {
 
-    private LightEffect lightEffect;
+    private PiFaceService pi;
 
     @Before
-    public void setup() throws IOException {
-        lightEffect = new LightEffectIml();
+    public void setup(){
+        try {
+            pi = PiFaceServiceIml.getPiFaceService();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
-    public void runEffect() throws Exception {
-//        lightEffect.runEffect(100);
+    public void getPiFaceService() throws Exception {
+
+    }
+
+    @Test
+    public void LEDon() throws Exception {
+        pi.LEDon(3);
+    }
+
+    @Test
+    public void LEDoff() throws Exception {
+
+    }
+
+    @Test
+    public void switchState() throws Exception {
+
     }
 }
