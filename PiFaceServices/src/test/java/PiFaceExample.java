@@ -33,13 +33,10 @@ public class PiFaceExample {
         // create the Pi-Face controller
         final PiFace piface = new PiFaceDevice(PiFace.DEFAULT_ADDRESS, Spi.CHANNEL_0);
         // run continuously until user aborts with CTRL-C
-        while(true) {
 
             piface.getLed(7).toggle();
-        }
 
         // stop all GPIO activity/threads by shutting down the GPIO controller
         // (this method will forcefully shutdown all GPIO monitoring threads and scheduled tasks)
-        //gpio.shutdown();  // <-- uncomment if your program terminates
     }
 }
