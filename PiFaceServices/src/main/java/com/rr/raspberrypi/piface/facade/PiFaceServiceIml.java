@@ -35,7 +35,7 @@ public class PiFaceServiceIml implements PiFaceService {
     }
     public static PiFaceService getPiFaceService() throws IOException {
         if(PI_FACE_SERVICE==null) {
-            new PiFaceServiceIml();
+            PI_FACE_SERVICE = new PiFaceServiceIml();
         }
         return PI_FACE_SERVICE;
     }
