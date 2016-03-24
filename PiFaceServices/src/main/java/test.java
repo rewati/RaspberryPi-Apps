@@ -17,7 +17,7 @@ public class test {
         final GpioController gpio = GpioFactory.getInstance();
 
         // provision gpio pin #01 & #03 as an output pins and blink
-        final GpioPinDigitalOutput led1 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01);
+        final GpioPinDigitalOutput led1 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04);
         led1.blink(500);
     }
 
