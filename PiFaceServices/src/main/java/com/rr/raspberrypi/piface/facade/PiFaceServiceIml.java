@@ -29,13 +29,13 @@ import java.io.IOException;
 public class PiFaceServiceIml implements PiFaceService {
 
     private static PiFaceService PI_FACE_SERVICE;
-    final PiFace piface = new PiFaceDevice(PiFace.DEFAULT_ADDRESS, Spi.CHANNEL_0);
-    private PiFaceServiceIml() throws IOException {
-        PI_FACE_SERVICE=new PiFaceServiceIml();
+    private static PiFace piface;
+    private PiFaceServiceIml(){
     }
     public static PiFaceService getPiFaceService() throws IOException {
         if(PI_FACE_SERVICE==null) {
             PI_FACE_SERVICE = new PiFaceServiceIml();
+            piface = new PiFaceDevice(PiFace.DEFAULT_ADDRESS, Spi.CHANNEL_0);
         }
         return PI_FACE_SERVICE;
     }
