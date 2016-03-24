@@ -45,4 +45,25 @@ public class PiFaceExample {
             }
 
     }
+
+    @Test
+    public  void test1() throws InterruptedException, IOException {
+
+        System.out.println("<--Pi4J--> Pi-Face GPIO Example ... started.");
+
+        // create the Pi-Face controller
+        final PiFace piface = new PiFaceDevice(PiFace.DEFAULT_ADDRESS, Spi.CHANNEL_0);
+        int i =3;
+        while(true) {
+            if(i>7)
+                i=1;
+            LED l = piface.getLed(i);
+            l.toggle();
+            Thread.sleep(500);
+            l.toggle();
+            ++i;
+        }
+
+
+    }
 }
