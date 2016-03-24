@@ -37,6 +37,6 @@ public class LightEffectImlTest {
 
     @Test
     public void runEffect() throws Exception {
-        lightEffect.runEffect(100);
+        lightEffect.runEffect(1000);
     }
 }
