@@ -33,11 +33,15 @@ public class PiFaceExample {
 
         // create the Pi-Face controller
         final PiFace piface = new PiFaceDevice(PiFace.DEFAULT_ADDRESS, Spi.CHANNEL_0);
-
-            for(LED l:piface.getLeds()) {
+            int i =3;
+            while(true) {
+                if(i>7)
+                    i=3;
+                LED l = piface.getLed(i);
                 l.toggle();
-                Thread.sleep(5000);
+                Thread.sleep(500);
                 l.toggle();
+                ++i;
             }
 
     }
