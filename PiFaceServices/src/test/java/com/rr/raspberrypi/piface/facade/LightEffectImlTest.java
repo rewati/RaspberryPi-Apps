@@ -16,12 +16,27 @@
 
 package com.rr.raspberrypi.piface.facade;
 
+import org.junit.Before;
+import org.junit.Test;
+
+import java.io.IOException;
+
+import static org.junit.Assert.*;
+
 /**
  * Created by Rewati Raman(rewati.raman@gmail.com).
  */
-public interface PiFaceService {
-    void LEDon(int i);
-    void LEDoff(int i);
-    boolean switchState(int i);
+public class LightEffectImlTest {
 
+    private LightEffect lightEffect;
+
+    @Before
+    public void setup() throws IOException {
+        lightEffect = new LightEffectIml();
+    }
+
+    @Test
+    public void runEffect() throws Exception {
+        lightEffect.runEffect(100);
+    }
 }

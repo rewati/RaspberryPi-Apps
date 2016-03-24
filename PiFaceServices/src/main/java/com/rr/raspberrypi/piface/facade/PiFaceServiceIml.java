@@ -64,5 +64,16 @@ public class PiFaceServiceIml implements PiFaceService {
         led.toggle();
     }
 
+    @Override
+    public boolean switchState(int i) {
+        return piface.getSwitch(i).isOn();
+    }
+
+    public void test(){
+        piface.getRelay(1).getState();
+        piface.getSwitch(1).addListener();
+        piface.getSwitch(1).getState();
+    }
+
 
 }

@@ -16,12 +16,25 @@
 
 package com.rr.raspberrypi.piface.facade;
 
+import java.io.IOException;
+
 /**
  * Created by Rewati Raman(rewati.raman@gmail.com).
  */
-public interface PiFaceService {
-    void LEDon(int i);
-    void LEDoff(int i);
-    boolean switchState(int i);
+public class LightEffectIml implements LightEffect {
 
+    private PiFaceService pi;
+
+    public LightEffectIml() throws IOException {
+        pi = PiFaceServiceIml.getPiFaceService();
+    }
+
+    public void runEffect(long delay) throws InterruptedException {
+        int i = 0;
+        while(i<7 && pi.switchState(0)) {
+            pi.LEDon(i);
+            Thread.sleep(delay);
+            pi.LEDoff(i);
+        }
+    }
 }

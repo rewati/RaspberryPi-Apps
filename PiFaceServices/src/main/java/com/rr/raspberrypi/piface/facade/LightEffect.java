@@ -19,9 +19,6 @@ package com.rr.raspberrypi.piface.facade;
 /**
  * Created by Rewati Raman(rewati.raman@gmail.com).
  */
-public interface PiFaceService {
-    void LEDon(int i);
-    void LEDoff(int i);
-    boolean switchState(int i);
-
+public interface LightEffect {
+    void runEffect(long delay) throws InterruptedException;
 }
