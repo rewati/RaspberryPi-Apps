@@ -59,7 +59,7 @@ public class PiFaceExample {
                 i=1;
             LED l = piface.getLed(i);
             l.toggle();
-            Thread.sleep(500);
+            Thread.sleep(100);
             l.toggle();
             ++i;
         }
