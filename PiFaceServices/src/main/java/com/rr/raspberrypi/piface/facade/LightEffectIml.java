@@ -32,9 +32,12 @@ public class LightEffectIml implements LightEffect {
     public void runEffect(long delay) throws InterruptedException {
         int i = 0;
         while(i<7 && !pi.switchState(0)) {
+            if(i==7)
+                i=0;
             pi.LEDon(i);
             Thread.sleep(delay);
             pi.LEDoff(i);
+            ++i;
         }
     }
 }
