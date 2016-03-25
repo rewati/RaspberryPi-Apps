@@ -69,10 +69,26 @@ public class PiFaceServiceIml implements PiFaceService {
         return piface.getSwitch(i).isOn();
     }
 
+    @Override
+    public void sendPulsePin(int pin,long delay) {
+        piface.getOutputPin(pin).pulse(delay);
+    }
+
+    @Override
+    public void makePinOff(int pin) {
+        piface.getOutputPin(pin).low();
+    }
+
+    @Override
+    public void makePinOn(int pin) {
+        piface.getOutputPin(pin).high();
+    }
+
     public void test(){
         piface.getRelay(1).getState();
         piface.getSwitch(1).addListener();
         piface.getSwitch(1).getState();
+        piface.getOutputPin(1).low();
     }
 
 

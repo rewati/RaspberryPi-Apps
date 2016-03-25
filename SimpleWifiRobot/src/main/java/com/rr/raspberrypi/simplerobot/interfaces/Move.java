@@ -14,16 +14,20 @@
  * limitations under the License.
  */
 
-package com.rr.raspberrypi.piface.facade;
+package com.rr.raspberrypi.simplerobot.interfaces;
 
 /**
  * Created by Rewati Raman(rewati.raman@gmail.com).
  */
-public interface PiFaceService {
-    void LEDon(int i);
-    void LEDoff(int i);
-    boolean switchState(int i);
-    void sendPulsePin(int pin,long delay);
-    void makePinOff(int pin);
-    void makePinOn(int pin);
+public interface Move {
+    long stepDelay = 100;
+    void stepFront();
+    void stepBack();
+    void startFront();
+    void startRevers();
+    void leftTurn();
+    void rightTurn();
+    void startLeftTurn();
+    void startRightTurn();
+    void stop();
 }
