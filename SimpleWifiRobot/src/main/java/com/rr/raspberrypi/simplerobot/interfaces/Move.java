@@ -20,7 +20,6 @@ package com.rr.raspberrypi.simplerobot.interfaces;
  * Created by Rewati Raman(rewati.raman@gmail.com).
  */
 public interface Move {
-    long stepDelay = 100;
     void stepFront();
     void stepBack();
     void startFront();

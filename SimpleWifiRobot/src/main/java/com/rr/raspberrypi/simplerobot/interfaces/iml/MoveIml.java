@@ -38,14 +38,14 @@ public class MoveIml implements Move {
 
     public void stepFront() {
         stop();
-        piFace.sendPulsePin(robotConfig.getLeftFheelForward(),stepDelay);
-        piFace.sendPulsePin(robotConfig.getRightWheelForward(),stepDelay);
+        piFace.sendPulsePin(robotConfig.getLeftFheelForward(),robotConfig.getStepDelay());
+        piFace.sendPulsePin(robotConfig.getRightWheelForward(),robotConfig.getStepDelay());
     }
 
     public void stepBack() {
         stop();
-        piFace.sendPulsePin(robotConfig.getLeftWheelReverse(),stepDelay);
-        piFace.sendPulsePin(robotConfig.getRightWheelReverse(),stepDelay);
+        piFace.sendPulsePin(robotConfig.getLeftWheelReverse(),robotConfig.getStepDelay());
+        piFace.sendPulsePin(robotConfig.getRightWheelReverse(),robotConfig.getStepDelay());
     }
 
     public void startFront() {

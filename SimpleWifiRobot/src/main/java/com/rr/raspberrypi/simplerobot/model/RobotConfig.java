@@ -20,10 +20,19 @@ package com.rr.raspberrypi.simplerobot.model;
  * Created by Rewati Raman(rewati.raman@gmail.com).
  */
 public class RobotConfig {
+    private long stepDelay = 100;
     private int leftFheelForward=0;
     private int rightWheelForward=1;
     private int leftWheelReverse=2;
     private int rightWheelReverse=3;
+
+    public long getStepDelay() {
+        return stepDelay;
+    }
+
+    public void setStepDelay(long stepDelay) {
+        this.stepDelay = stepDelay;
+    }
 
     public int getLeftFheelForward() {
         return leftFheelForward;
