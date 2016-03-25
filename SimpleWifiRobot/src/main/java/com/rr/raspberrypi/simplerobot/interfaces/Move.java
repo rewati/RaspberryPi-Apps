@@ -20,13 +20,13 @@ package com.rr.raspberrypi.simplerobot.interfaces;
  * Created by Rewati Raman(rewati.raman@gmail.com).
  */
 public interface Move {
-    void stepFront();
-    void stepBack();
+    void stepFront() throws InterruptedException;
+    void stepBack() throws InterruptedException;
     void startFront();
     void startRevers();
-    void leftTurn();
-    void rightTurn();
-    void startLeftTurn();
-    void startRightTurn();
+    void leftTurn() throws InterruptedException;
+    void rightTurn() throws InterruptedException;
+    void startLeftTurn() throws InterruptedException;
+    void startRightTurn() throws InterruptedException;
     void stop();
 }

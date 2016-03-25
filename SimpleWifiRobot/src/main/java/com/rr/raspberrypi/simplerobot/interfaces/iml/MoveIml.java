@@ -36,16 +36,20 @@ public class MoveIml implements Move {
         robotConfig = new RobotConfig();
     }
 
-    public void stepFront() {
+    public void stepFront() throws InterruptedException {
         stop();
-        piFace.sendPulsePin(robotConfig.getLeftFheelForward(),robotConfig.getStepDelay());
-        piFace.sendPulsePin(robotConfig.getRightWheelForward(),robotConfig.getStepDelay());
+        piFace.makePinOn(robotConfig.getRightWheelForward());
+        piFace.makePinOn(robotConfig.getLeftFheelForward());
+        Thread.sleep(robotConfig.getStepDelay());
+        stop();
     }
 
-    public void stepBack() {
+    public void stepBack() throws InterruptedException {
         stop();
-        piFace.sendPulsePin(robotConfig.getLeftWheelReverse(),robotConfig.getStepDelay());
-        piFace.sendPulsePin(robotConfig.getRightWheelReverse(),robotConfig.getStepDelay());
+        piFace.makePinOn(robotConfig.getLeftWheelReverse());
+        piFace.makePinOn(robotConfig.getRightWheelReverse());
+        Thread.sleep(robotConfig.getStepDelay());
+        stop();
     }
 
     public void startFront() {
@@ -60,20 +64,34 @@ public class MoveIml implements Move {
         piFace.makePinOn(robotConfig.getLeftWheelReverse());
     }
 
-    public void leftTurn() {
-
+    public void leftTurn() throws InterruptedException {
+        stop();
+        piFace.makePinOn(robotConfig.getRightWheelForward());
+        piFace.makePinOn(robotConfig.getLeftWheelReverse());
+        Thread.sleep(robotConfig.getStepDelay());
+        stop();
     }
 
-    public void rightTurn() {
-
+    public void rightTurn() throws InterruptedException {
+        stop();
+        piFace.makePinOn(robotConfig.getLeftFheelForward());
+        piFace.makePinOn(robotConfig.getRightWheelReverse());
+        Thread.sleep(robotConfig.getStepDelay());
+        stop();
     }
 
-    public void startLeftTurn() {
-
+    public void startLeftTurn() throws InterruptedException {
+        stop();
+        piFace.makePinOn(robotConfig.getRightWheelForward());
+        piFace.makePinOn(robotConfig.getLeftWheelReverse());
+        Thread.sleep(robotConfig.getStepDelay());
     }
 
-    public void startRightTurn() {
-
+    public void startRightTurn() throws InterruptedException {
+        stop();
+        piFace.makePinOn(robotConfig.getLeftFheelForward());
+        piFace.makePinOn(robotConfig.getRightWheelReverse());
+        Thread.sleep(robotConfig.getStepDelay());
     }
 
     public void stop() {

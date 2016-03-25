@@ -31,6 +31,7 @@ import static org.junit.Assert.*;
 public class MoveImlTest {
 
     private Move move;
+
     @Before
     public void setup() throws IOException {
         move = new MoveIml();
@@ -43,42 +44,42 @@ public class MoveImlTest {
 
     @Test
     public void stepBack() throws Exception {
-
+        move.stepBack();
     }
 
     @Test
     public void startFront() throws Exception {
-
+        move.startFront();
     }
 
     @Test
     public void startRevers() throws Exception {
-
+        move.startRevers();
     }
 
     @Test
     public void leftTurn() throws Exception {
-
+        move.leftTurn();
     }
 
     @Test
     public void rightTurn() throws Exception {
-
+        move.rightTurn();
     }
 
     @Test
     public void startLeftTurn() throws Exception {
-
+        move.startLeftTurn();
     }
 
     @Test
     public void startRightTurn() throws Exception {
-
+        move.startRightTurn();
     }
 
     @Test
     public void stop() throws Exception {
-
+        move.stop();
     }
 
     @After
