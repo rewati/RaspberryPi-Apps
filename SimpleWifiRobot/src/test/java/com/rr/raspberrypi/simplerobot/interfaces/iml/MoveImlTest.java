@@ -17,6 +17,7 @@
 package com.rr.raspberrypi.simplerobot.interfaces.iml;
 
 import com.rr.raspberrypi.simplerobot.interfaces.Move;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -78,5 +79,10 @@ public class MoveImlTest {
     @Test
     public void stop() throws Exception {
 
+    }
+
+    @After
+    public void tearDown(){
+        move.stop();
     }
 }
