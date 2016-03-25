@@ -21,10 +21,10 @@ package com.rr.raspberrypi.simplerobot.model;
  */
 public class RobotConfig {
     private long stepDelay = 800;
-    private int leftFheelForward=0;
-    private int rightWheelForward=1;
-    private int leftWheelReverse=2;
-    private int rightWheelReverse=3;
+    private int leftFheelForward=2;
+    private int rightWheelForward=3;
+    private int leftWheelReverse=4;
+    private int rightWheelReverse=5;
 
     public long getStepDelay() {
         return stepDelay;
