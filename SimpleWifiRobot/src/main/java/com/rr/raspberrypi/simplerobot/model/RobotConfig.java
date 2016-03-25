@@ -20,10 +20,10 @@ package com.rr.raspberrypi.simplerobot.model;
  * Created by Rewati Raman(rewati.raman@gmail.com).
  */
 public class RobotConfig {
-    private int leftFheelForward;
-    private int rightWheelForward;
-    private int leftWheelReverse;
-    private int rightWheelReverse;
+    private int leftFheelForward=0;
+    private int rightWheelForward=1;
+    private int leftWheelReverse=2;
+    private int rightWheelReverse=3;
 
     public int getLeftFheelForward() {
         return leftFheelForward;
