@@ -20,7 +20,7 @@ package com.rr.raspberrypi.simplerobot.model;
  * Created by Rewati Raman(rewati.raman@gmail.com).
  */
 public class RobotConfig {
-    private long stepDelay = 100;
+    private long stepDelay = 5000;
     private int leftFheelForward=0;
     private int rightWheelForward=1;
     private int leftWheelReverse=2;
