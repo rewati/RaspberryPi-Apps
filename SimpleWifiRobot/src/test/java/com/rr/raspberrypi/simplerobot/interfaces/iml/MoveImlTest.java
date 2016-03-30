@@ -45,9 +45,26 @@ public class MoveImlTest {
         move.stepFront();
         move.leftTurn();
         move.leftTurn();
+        move.leftTurn();
         move.stepFront();
         move.stepFront();
         move.stepFront();
+        move.rightTurn();
+        move.rightTurn();
+        move.rightTurn();
+        move.stepFront();
+        move.stepFront();
+        move.stepFront();
+        move.stepFront();
+        move.stepFront();
+        move.stepFront();
+        move.leftTurn();
+        move.leftTurn();
+        move.leftTurn();
+        move.stepFront();
+        move.stepFront();
+        move.stepFront();
+        move.rightTurn();
         move.rightTurn();
         move.rightTurn();
         move.stepFront();
@@ -55,20 +72,6 @@ public class MoveImlTest {
         move.stepFront();
     }
 
-    @Test
-    public void runTest() throws InterruptedException {
-        Scanner s = new Scanner(System.in);
-        String commant = s.nextLine();
-        while(!commant.equals("quit")) {
-            if(commant.equals("w"))
-                move.stepFront();
-            if(commant.equals("a"))
-                move.leftTurn();
-            if(commant.equals("d"))
-                move.rightTurn();
-            commant = s.nextLine();
-        }
-    }
 
 //
 //    @Test
