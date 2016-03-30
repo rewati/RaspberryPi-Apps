@@ -22,6 +22,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 import static org.junit.Assert.*;
 
@@ -53,6 +54,22 @@ public class MoveImlTest {
         move.stepFront();
         move.stepFront();
     }
+
+    @Test
+    public void runTest() throws InterruptedException {
+        Scanner s = new Scanner(System.in);
+        String commant = s.nextLine();
+        while(!commant.equals("quit")) {
+            if(commant.equals("w"))
+                move.stepFront();
+            if(commant.equals("a"))
+                move.leftTurn();
+            if(commant.equals("d"))
+                move.rightTurn();
+            commant = s.nextLine();
+        }
+    }
+
 //
 //    @Test
 //    public void stepFront() throws Exception {
