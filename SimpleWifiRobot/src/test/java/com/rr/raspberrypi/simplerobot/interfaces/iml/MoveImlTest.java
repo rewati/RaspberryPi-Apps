@@ -39,21 +39,19 @@ public class MoveImlTest {
 
     @Test
     public void integrationTest() throws Exception{
-        move.startFront();
-        move.startFront();
-        move.startFront();
+        move.stepFront();
+        move.stepFront();
+        move.stepFront();
         move.leftTurn();
         move.leftTurn();
-        move.startFront();
-        move.startFront();
-        move.startFront();
+        move.stepFront();
+        move.stepFront();
+        move.stepFront();
         move.rightTurn();
         move.rightTurn();
-        move.startFront();
-        move.startFront();
-        move.startFront();
-
-
+        move.stepFront();
+        move.stepFront();
+        move.stepFront();
     }
 //
 //    @Test
@@ -67,8 +65,8 @@ public class MoveImlTest {
 //    }
 //
 //    @Test
-//    public void startFront() throws Exception {
-//        move.startFront();
+//    public void stepFront() throws Exception {
+//        move.stepFront();
 //    }
 //
 //    @Test
