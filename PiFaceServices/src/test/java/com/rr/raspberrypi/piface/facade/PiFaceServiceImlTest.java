@@ -44,12 +44,12 @@ public class PiFaceServiceImlTest {
 
     }
 
-    @Test
+    //@Test
     public void LEDon() throws Exception {
         pi.LEDon(3);
     }
 
-    @Test
+    //@Test
     public void LEDoff() throws Exception {
         pi.LEDoff(3);
     }
