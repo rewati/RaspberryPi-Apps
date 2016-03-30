@@ -70,6 +70,36 @@ public class MoveImlTest {
         move.stepFront();
         move.stepFront();
         move.stepFront();
+        move.stepFront();
+        move.stepFront();
+        move.stepFront();
+        move.leftTurn();
+        move.leftTurn();
+        move.leftTurn();
+        move.stepFront();
+        move.stepFront();
+        move.stepFront();
+        move.rightTurn();
+        move.rightTurn();
+        move.rightTurn();
+        move.stepFront();
+        move.stepFront();
+        move.stepFront();
+        move.stepFront();
+        move.stepFront();
+        move.stepFront();
+        move.leftTurn();
+        move.leftTurn();
+        move.leftTurn();
+        move.stepFront();
+        move.stepFront();
+        move.stepFront();
+        move.rightTurn();
+        move.rightTurn();
+        move.rightTurn();
+        move.stepFront();
+        move.stepFront();
+        move.stepFront();
     }
 
 
