@@ -26,4 +26,6 @@ public interface PiFaceService {
     void sendPulsePin(int pin,long delay);
     void makePinOff(int pin);
     void makePinOn(int pin);
+    void closeRelay(int index);
+    void openRelay(int index);
 }

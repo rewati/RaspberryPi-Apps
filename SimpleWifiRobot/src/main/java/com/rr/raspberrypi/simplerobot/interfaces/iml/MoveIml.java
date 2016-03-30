@@ -38,8 +38,8 @@ public class MoveIml implements Move {
 
     public void stepFront() throws InterruptedException {
         stop();
-        piFace.makePinOn(robotConfig.getRightWheelForward());
-        piFace.makePinOn(robotConfig.getLeftFheelForward());
+        piFace.openRelay(robotConfig.getRightWheelForward());
+        piFace.openRelay(robotConfig.getLeftFheelForward());
         Thread.sleep(robotConfig.getStepDelay());
         stop();
     }
@@ -95,6 +95,8 @@ public class MoveIml implements Move {
     }
 
     public void stop() {
+        piFace.closeRelay(robotConfig.getLeftFheelForward());
+        piFace.closeRelay(robotConfig.getRightWheelForward());
         piFace.makePinOff(robotConfig.getLeftFheelForward());
         piFace.makePinOff(robotConfig.getRightWheelForward());
         piFace.makePinOff(robotConfig.getLeftWheelReverse());

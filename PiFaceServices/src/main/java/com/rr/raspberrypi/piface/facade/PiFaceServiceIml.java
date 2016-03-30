@@ -84,6 +84,16 @@ public class PiFaceServiceIml implements PiFaceService {
         piface.getOutputPin(pin).high();
     }
 
+    @Override
+    public void closeRelay(int index) {
+        piface.getRelay(index).close();
+    }
+
+    @Override
+    public void openRelay(int index) {
+        piface.getRelay(index).open();
+    }
+
     public void test(){
         piface.getRelay(1).getState();
         piface.getSwitch(1).addListener();
