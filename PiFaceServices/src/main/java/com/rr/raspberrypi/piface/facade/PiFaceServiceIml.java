@@ -86,12 +86,12 @@ public class PiFaceServiceIml implements PiFaceService {
 
     @Override
     public void closeRelay(int index) {
-        piface.getRelay(index).close();
+        piface.getRelay(index).open();
     }
 
     @Override
     public void openRelay(int index) {
-        piface.getRelay(index).open();
+        piface.getRelay(index).close();
     }
 
     public void test(){
