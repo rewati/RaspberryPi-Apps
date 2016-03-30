@@ -45,61 +45,46 @@ public class MoveIml implements Move {
     }
 
     public void stepBack() throws InterruptedException {
-        stop();
-        piFace.makePinOn(robotConfig.getLeftWheelReverse());
-        piFace.makePinOn(robotConfig.getRightWheelReverse());
-        Thread.sleep(robotConfig.getStepDelay());
-        stop();
+
     }
 
     public void startFront() {
         stop();
-        piFace.makePinOn(robotConfig.getRightWheelForward());
-        piFace.makePinOn(robotConfig.getLeftFheelForward());
+        piFace.openRelay(robotConfig.getRightWheelForward());
+        piFace.openRelay(robotConfig.getLeftFheelForward());
     }
 
     public void startRevers() {
-        stop();
-        piFace.makePinOn(robotConfig.getRightWheelReverse());
-        piFace.makePinOn(robotConfig.getLeftWheelReverse());
     }
 
     public void leftTurn() throws InterruptedException {
         stop();
-        piFace.makePinOn(robotConfig.getRightWheelForward());
-        piFace.makePinOn(robotConfig.getLeftWheelReverse());
+        piFace.openRelay(robotConfig.getLeftFheelForward());
         Thread.sleep(robotConfig.getStepDelay());
         stop();
     }
 
     public void rightTurn() throws InterruptedException {
         stop();
-        piFace.makePinOn(robotConfig.getLeftFheelForward());
-        piFace.makePinOn(robotConfig.getRightWheelReverse());
+        piFace.openRelay(robotConfig.getRightWheelForward());
         Thread.sleep(robotConfig.getStepDelay());
         stop();
     }
 
     public void startLeftTurn() throws InterruptedException {
         stop();
-        piFace.makePinOn(robotConfig.getRightWheelForward());
-        piFace.makePinOn(robotConfig.getLeftWheelReverse());
+        piFace.openRelay(robotConfig.getLeftFheelForward());
         Thread.sleep(robotConfig.getStepDelay());
     }
 
     public void startRightTurn() throws InterruptedException {
         stop();
-        piFace.makePinOn(robotConfig.getLeftFheelForward());
-        piFace.makePinOn(robotConfig.getRightWheelReverse());
+        piFace.openRelay(robotConfig.getRightWheelForward());
         Thread.sleep(robotConfig.getStepDelay());
     }
 
     public void stop() {
         piFace.closeRelay(robotConfig.getLeftFheelForward());
         piFace.closeRelay(robotConfig.getRightWheelForward());
-        piFace.makePinOff(robotConfig.getLeftFheelForward());
-        piFace.makePinOff(robotConfig.getRightWheelForward());
-        piFace.makePinOff(robotConfig.getLeftWheelReverse());
-        piFace.makePinOff(robotConfig.getRightWheelReverse());
     }
 }

@@ -38,49 +38,68 @@ public class MoveImlTest {
     }
 
     @Test
-    public void stepFront() throws Exception {
-        move.stepFront();
-    }
-
-    @Test
-    public void stepBack() throws Exception {
-        move.stepBack();
-    }
-
-    @Test
-    public void startFront() throws Exception {
+    public void integrationTest() throws Exception{
         move.startFront();
-    }
-
-    @Test
-    public void startRevers() throws Exception {
-        move.startRevers();
-    }
-
-    @Test
-    public void leftTurn() throws Exception {
+        move.startFront();
+        move.startFront();
         move.leftTurn();
-    }
-
-    @Test
-    public void rightTurn() throws Exception {
+        move.leftTurn();
+        move.startFront();
+        move.startFront();
+        move.startFront();
         move.rightTurn();
-    }
+        move.rightTurn();
+        move.startFront();
+        move.startFront();
+        move.startFront();
 
-    @Test
-    public void startLeftTurn() throws Exception {
-        move.startLeftTurn();
-    }
 
-    @Test
-    public void startRightTurn() throws Exception {
-        move.startRightTurn();
     }
-
-    @Test
-    public void stop() throws Exception {
-        move.stop();
-    }
+//
+//    @Test
+//    public void stepFront() throws Exception {
+//        move.stepFront();
+//    }
+//
+//    @Test
+//    public void stepBack() throws Exception {
+//        move.stepBack();
+//    }
+//
+//    @Test
+//    public void startFront() throws Exception {
+//        move.startFront();
+//    }
+//
+//    @Test
+//    public void startRevers() throws Exception {
+//        move.startRevers();
+//    }
+//
+//    @Test
+//    public void leftTurn() throws Exception {
+//        move.leftTurn();
+//    }
+//
+//    @Test
+//    public void rightTurn() throws Exception {
+//        move.rightTurn();
+//    }
+//
+//    @Test
+//    public void startLeftTurn() throws Exception {
+//        move.startLeftTurn();
+//    }
+//
+//    @Test
+//    public void startRightTurn() throws Exception {
+//        move.startRightTurn();
+//    }
+//
+//    @Test
+//    public void stop() throws Exception {
+//        move.stop();
+//    }
 
     @After
     public void tearDown(){
