@@ -18,38 +18,35 @@ package com.rr.raspberrypi.simplerobot.web;
 
 import com.rr.raspberrypi.simplerobot.interfaces.Move;
 import com.rr.raspberrypi.simplerobot.interfaces.iml.MoveIml;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.io.IOException;
 
 /**
  * Created by Rewati Raman(rewati.raman@gmail.com).
  */
-@RestController
-@RequestMapping("/move")
-public class Controller {
-
+public class WebControllerIml implements WebController {
     Move move = new MoveIml();
 
-    public Controller() throws IOException {
+    public WebControllerIml() throws IOException {
     }
 
-    @RequestMapping("/forward")
-    public String moveForward() throws InterruptedException {
-        move.stepFront();
-        return "forward";
-    }
-
-    @RequestMapping("/left")
-    public String turnLeft() throws InterruptedException {
-        move.leftTurn();
-        return "left";
-    }
-
-    @RequestMapping("/right")
-    public String turnRight() throws InterruptedException {
-        move.rightTurn();
-        return "right";
+    public String moveStep(String direction, int steps) throws InterruptedException {
+        if(direction.equals("forward")){
+            for(int i=0;i<steps;++i) {
+                move.stepFront();
+            }
+        }
+        if(direction.equals("left")){
+            for(int i=0;i<steps;++i) {
+                move.leftTurn();
+            }
+        }
+        if(direction.equals("right")){
+            for(int i=0;i<steps;++i) {
+                move.rightTurn();
+            }
+        }
+        return null;
     }
 }

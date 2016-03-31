@@ -16,15 +16,18 @@
 
 package com.rr.raspberrypi.simplerobot.web;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * Created by Rewati Raman(rewati.raman@gmail.com).
  */
-@SpringBootApplication
-public class Application {
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
+@Controller
+@RequestMapping("/move")
+public interface WebController {
+
+    @RequestMapping(value = "/{direction}/{steps}", method = RequestMethod.GET)
+    public String moveStep(@PathVariable String direction,@PathVariable int steps) throws InterruptedException;
 }
