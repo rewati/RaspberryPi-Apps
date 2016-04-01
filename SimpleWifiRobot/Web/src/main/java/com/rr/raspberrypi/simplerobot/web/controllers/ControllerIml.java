@@ -14,20 +14,16 @@
  * limitations under the License.
  */
 
-package com.rr.raspberrypi.simplerobot.web;
+package com.rr.raspberrypi.simplerobot.web.controllers;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by Rewati Raman(rewati.raman@gmail.com).
  */
-@Controller
-@RequestMapping("/move")
-public interface WebController {
-
-    @RequestMapping(value = "/{direction}/{steps}", method = RequestMethod.GET)
-    public String moveStep(@PathVariable String direction,@PathVariable int steps) throws InterruptedException;
+@Service
+public class ControllerIml implements Controller {
+    public String moveFront(){
+        return "front";
+    }
 }

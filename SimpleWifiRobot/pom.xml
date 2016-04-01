@@ -28,7 +28,7 @@
     <artifactId>SimpleWifiRobot</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>Web</module>
+        <!--<module>Web</module>-->
     </modules>
     <dependencies>
         <dependency>
