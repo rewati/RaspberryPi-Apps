@@ -40,14 +40,16 @@ public class Application {
     public static void main(String arg[]) {
         ConfigurableApplicationContext context = new SpringApplicationBuilder()
                 .sources(Application.class)
-                .bannerMode(Banner.Mode.OFF)
+                .bannerMode(Banner.Mode.CONSOLE)
                 .run(arg);
         Application app = context.getBean(Application.class);
         app.start();
     }
 
     private void start(){
-        System.out.println("Hello there");
+        System.out.println("#################################");
+        System.out.println("#      Starting AutoBot         #");
+        System.out.println("#################################\n");
         robot.init();
     }
 }
