@@ -38,11 +38,11 @@ public class GpioServiceIml implements GpioService{
     private GpioPinDigitalOutput[] outputPins;
 
     public void turnPinOn(int index) {
-        gpio.high(getOutputPins(index));
+        getOutputPins(index).high();
     }
 
     public void turnPinOff(int index) {
-        gpio.low(getOutputPins(index));
+        getOutputPins(index).low();
     }
 
     /**

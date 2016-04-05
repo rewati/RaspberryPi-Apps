@@ -16,36 +16,13 @@
 
 package com.rr.autobot1.bot;
 
-import org.springframework.stereotype.Component;
+import com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent;
 
 /**
  * Created by Rewati Raman(rewati.raman@gmail.com).
  */
-@Component
-public class Config {
-    private long stepDelay;
-    private int leftForwardPin;
-    private int leftReversePin;
-    private int rightForwardPin;
-    private int rightReversePin;
+public class ObstacleMonitorIml implements ObstacleMonitor {
+    public void handleGpioPinDigitalStateChangeEvent(GpioPinDigitalStateChangeEvent event) {
 
-    public long getStepDelay() {
-        return stepDelay;
-    }
-
-    public int getLeftForwardPin() {
-        return leftForwardPin;
-    }
-
-    public int getLeftReversePin() {
-        return leftReversePin;
-    }
-
-    public int getRightForwardPin() {
-        return rightForwardPin;
-    }
-
-    public int getRightReversePin() {
-        return rightReversePin;
     }
 }
