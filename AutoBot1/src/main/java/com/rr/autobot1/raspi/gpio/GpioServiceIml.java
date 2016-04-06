@@ -23,6 +23,9 @@ import com.rr.autobot1.bot.Config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.Map;
+
 
 /**
  * Created by Rewati Raman(rewati.raman@gmail.com).
@@ -34,7 +37,7 @@ public class GpioServiceIml implements GpioService{
     Config config;
 
     private final GpioController gpio = GpioFactory.getInstance();
-    private GpioPinDigitalOutput[] outputPins;
+    private Map<Integer,GpioPinDigitalOutput> outputPins;
 
     public void turnPinOn(int index) {
         getOutputPins(index).high();
@@ -50,21 +53,19 @@ public class GpioServiceIml implements GpioService{
      * @return
      */
     private GpioPinDigitalOutput getOutputPins(int index) {
-        try {
-            return outputPins[index];
-        } catch (NullPointerException e) {
+        if(outputPins == null) {
             provisionOutputPins();
-            return getOutputPins(index);
         }
+        return outputPins.get(index);
     }
     private void provisionOutputPins() {
         //Should be improved later with more dynamic Config class.
         //For now it is platform specific.
-        outputPins = new GpioPinDigitalOutput[4];
-        outputPins[0] = gpio.provisionDigitalOutputPin(RaspiPin.getPinByName("GPIO "+config.getLeftForwardPin()));
-        outputPins[1] = gpio.provisionDigitalOutputPin(RaspiPin.getPinByName("GPIO "+config.getLeftReversePin()));
-        outputPins[2] = gpio.provisionDigitalOutputPin(RaspiPin.getPinByName("GPIO "+config.getRightForwardPin()));
-        outputPins[3] = gpio.provisionDigitalOutputPin(RaspiPin.getPinByName("GPIO "+config.getRightReversePin()));
+        outputPins = new HashMap<Integer, GpioPinDigitalOutput>();
+        outputPins.put(config.getLeftForwardPin(),gpio.provisionDigitalOutputPin(RaspiPin.getPinByName("GPIO "+config.getLeftForwardPin())));
+        outputPins.put(config.getLeftReversePin(),gpio.provisionDigitalOutputPin(RaspiPin.getPinByName("GPIO "+config.getLeftReversePin())));
+        outputPins.put(config.getRightForwardPin(),gpio.provisionDigitalOutputPin(RaspiPin.getPinByName("GPIO "+config.getRightForwardPin())));
+        outputPins.put(config.getRightReversePin(),gpio.provisionDigitalOutputPin(RaspiPin.getPinByName("GPIO "+config.getRightReversePin())));
     }
 
     private void test(){
