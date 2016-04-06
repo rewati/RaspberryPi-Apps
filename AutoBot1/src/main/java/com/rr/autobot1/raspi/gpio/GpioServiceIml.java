@@ -16,10 +16,9 @@
 
 package com.rr.autobot1.raspi.gpio;
 
-import com.pi4j.io.gpio.GpioController;
-import com.pi4j.io.gpio.GpioFactory;
-import com.pi4j.io.gpio.GpioPinDigitalOutput;
-import com.pi4j.io.gpio.RaspiPin;
+import com.pi4j.io.gpio.*;
+import com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent;
+import com.pi4j.io.gpio.event.GpioPinListenerDigital;
 import com.rr.autobot1.bot.Config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -66,5 +65,14 @@ public class GpioServiceIml implements GpioService{
         outputPins[1] = gpio.provisionDigitalOutputPin(RaspiPin.getPinByName("GPIO "+config.getLeftReversePin()));
         outputPins[2] = gpio.provisionDigitalOutputPin(RaspiPin.getPinByName("GPIO "+config.getRightForwardPin()));
         outputPins[3] = gpio.provisionDigitalOutputPin(RaspiPin.getPinByName("GPIO "+config.getRightReversePin()));
+    }
+
+    private void test(){
+        GpioPinDigitalInput input = gpio.provisionDigitalInputPin(RaspiPin.getPinByName("GPIO 2"));
+        input.addListener(new GpioPinListenerDigital() {
+            public void handleGpioPinDigitalStateChangeEvent(GpioPinDigitalStateChangeEvent event) {
+
+            }
+        });
     }
 }

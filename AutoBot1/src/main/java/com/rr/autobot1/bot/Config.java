@@ -16,6 +16,7 @@
 
 package com.rr.autobot1.bot;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 /**
@@ -23,29 +24,55 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class Config {
+
+    @Value("${stepDelay}")
     private long stepDelay;
+    @Value("${leftForwardPin}")
     private int leftForwardPin;
+    @Value("${leftReversePin}")
     private int leftReversePin;
+    @Value("${rightForwardPin}")
     private int rightForwardPin;
+    @Value("${rightReversePin}")
     private int rightReversePin;
 
     public long getStepDelay() {
         return stepDelay;
     }
 
+    public void setStepDelay(long stepDelay) {
+        this.stepDelay = stepDelay;
+    }
+
     public int getLeftForwardPin() {
         return leftForwardPin;
+    }
+
+    public void setLeftForwardPin(int leftForwardPin) {
+        this.leftForwardPin = leftForwardPin;
     }
 
     public int getLeftReversePin() {
         return leftReversePin;
     }
 
+    public void setLeftReversePin(int leftReversePin) {
+        this.leftReversePin = leftReversePin;
+    }
+
     public int getRightForwardPin() {
         return rightForwardPin;
     }
 
+    public void setRightForwardPin(int rightForwardPin) {
+        this.rightForwardPin = rightForwardPin;
+    }
+
     public int getRightReversePin() {
         return rightReversePin;
+    }
+
+    public void setRightReversePin(int rightReversePin) {
+        this.rightReversePin = rightReversePin;
     }
 }
