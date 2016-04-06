@@ -25,16 +25,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class Config {
 
-    @Value("${stepDelay}")
-    private long stepDelay;
-    @Value("${leftForwardPin}")
-    private int leftForwardPin;
-    @Value("${leftReversePin}")
-    private int leftReversePin;
-    @Value("${rightForwardPin}")
-    private int rightForwardPin;
-    @Value("${rightReversePin}")
-    private int rightReversePin;
+    private long stepDelay =100;
+    private int leftForwardPin=2;
+    private int leftReversePin=3;
+    private int rightForwardPin=4;
+    private int rightReversePin=17;
 
     public long getStepDelay() {
         return stepDelay;
