@@ -27,12 +27,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 /**
  * Created by Rewati Raman(rewati.raman@gmail.com).
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(Application.class)
 public class RobotImlTest {
 
-    @Autowired
-    Robot robot;
+//    @Autowired
+//    Robot robot;
 
     @Test
     public void init() throws Exception {
@@ -54,12 +52,12 @@ public class RobotImlTest {
 
     }
 
-    @Test
-    public void moveForward() throws Exception {
-        robot.moveForward();
-        Thread.sleep(500);
-        robot.stop();
-    }
+//    @Test
+//    public void moveForward() throws Exception {
+//        robot.moveForward();
+//        Thread.sleep(500);
+//        robot.stop();
+//    }
 
     @Test
     public void reverse() throws Exception {
