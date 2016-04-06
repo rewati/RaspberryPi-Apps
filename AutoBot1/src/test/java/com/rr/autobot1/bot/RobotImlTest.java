@@ -17,12 +17,22 @@
 package com.rr.autobot1.bot;
 
 
+import com.rr.autobot1.Application;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
  * Created by Rewati Raman(rewati.raman@gmail.com).
  */
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringApplicationConfiguration(Application.class)
 public class RobotImlTest {
+
+    @Autowired
+    Robot robot;
 
     @Test
     public void init() throws Exception {
@@ -46,7 +56,9 @@ public class RobotImlTest {
 
     @Test
     public void moveForward() throws Exception {
-
+        robot.moveForward();
+        Thread.sleep(500);
+        robot.stop();
     }
 
     @Test
